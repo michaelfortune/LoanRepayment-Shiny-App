@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Loanrepayment-shiny-app by michaelfortune</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Loanrepayment-shiny-app</h1>
+      <h2 class="project-tagline">LoanPayments</h2>
+      <a href="https://github.com/michaelfortune/LoanRepayment-Shiny-App" class="btn">View on GitHub</a>
+      <a href="https://github.com/michaelfortune/LoanRepayment-Shiny-App/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/michaelfortune/LoanRepayment-Shiny-App/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <hr>
+
+<p>title: Loan Payment Calculator 
+author: Michael Fortune</p>
+
+<hr>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>This application is designed to calculate loan repayments for a given loan amount and interest rate. Many people do not
+realise that in order to reduce the loan period significantly, 
+a modest increase in monthly is all that is required. This 
+shiny application allows people to do just that. You begin by
+selecting the intersset rate, amount of the loan and a typical
+repayment period. This will calculate the monthly repayments</p>
+
+<h2>
+<a id="and-the-total-repayment-over-the-chosen-period-you-can-then-adjust-the-repayment-period-down-or-up-and-instantly-see-the-difference-by-adjusting-the-values-one-can-easily-see-what-the-effect-can-be-ie-how-much-you-might-save-or-how-much-more-you-might-be-able-to-borrow-if-a-longer-repayment-period-is-chosen" class="anchor" href="#and-the-total-repayment-over-the-chosen-period-you-can-then-adjust-the-repayment-period-down-or-up-and-instantly-see-the-difference-by-adjusting-the-values-one-can-easily-see-what-the-effect-can-be-ie-how-much-you-might-save-or-how-much-more-you-might-be-able-to-borrow-if-a-longer-repayment-period-is-chosen" aria-hidden="true"><span class="octicon octicon-link"></span></a>and the total repayment over the chosen period. You can then adjust the repayment period down or up and instantly see the difference. By adjusting the values, one can easily see what the effect can be i.e how much you might save, or how much more you might be able to borrow if a longer repayment period is chosen.</h2>
+
+<h2>
+<a id="technology" class="anchor" href="#technology" aria-hidden="true"><span class="octicon octicon-link"></span></a>Technology</h2>
+
+<p>The app is known as a shiny app and is hosted at shinyapps.io, by the people who developed RStudio. In terms of code structure, there are effectively two parts: a user interface (ui.R) and a server part (server.R). The ui provide the mechanism for entering the values, while the server part does the calculating of the payment and the rendering of the graphical output.</p>
+
+<h2>
+<a id="application-location" class="anchor" href="#application-location" aria-hidden="true"><span class="octicon octicon-link"></span></a>Application location.</h2>
+
+<p>As mentioned above, the shiny app is hosted at shiny apps. The actual url is: (<a href="https://michaelfortune.shinyapps.io/LoanPayments">https://michaelfortune.shinyapps.io/LoanPayments</a>)</p>
+
+<p>A screenshot of the application is shown below:</p>
+
+<p><a href="https://raw.githubusercontent.com/michaelfortune/LoanRepayment-Shiny-App/master/Shinyscreen.png">shinyapp</a> </p>
+
+<h2>
+<a id="what-exactly-does-it-teel-us" class="anchor" href="#what-exactly-does-it-teel-us" aria-hidden="true"><span class="octicon octicon-link"></span></a>What exactly does it teel us?</h2>
+
+<p>If we examine the screenshot above, the main panel on the right shows 
+that for a loan of £100,000 over a 20 year (240 months) and an annual compounded interest rate of 1%, the repayments would be 240 payments of £460, totaling just over £110,000. Changing the repayment period to 15 years (180 month) results in 180 payments of £598, or a total of almost £108,000. In this particular case, there is little to be gained by reducing the period. The reason for this, is the low rate of interest:</p>
+
+<p><a href="https://raw.githubusercontent.com/michaelfortune/LoanRepayment-Shiny-App/master/Shiny100K1perc180.PNG">https://raw.githubusercontent.com/michaelfortune/LoanRepayment-Shiny-App/master/Shiny100K1perc180.PNG</a></p>
+
+<h2>
+<a id="what-if-the-interest-rates-were-higher" class="anchor" href="#what-if-the-interest-rates-were-higher" aria-hidden="true"><span class="octicon octicon-link"></span></a>What if the interest rates were higher?</h2>
+
+<p>Let us examine what happens when the interest rates are considearbly higher e.g. 9% </p>
+
+<p>Here, for a loan of £100,000 over 20 years, the repayments would be 240 x 900 payments, or a total of almost £216,000 </p>
+
+<p><a href="https://raw.githubusercontent.com/michaelfortune/LoanRepayment-Shiny-App/master/shiny9_240.PNG">https://raw.githubusercontent.com/michaelfortune/LoanRepayment-Shiny-App/master/shiny9_240.PNG</a></p>
+
+<p>If we reduce the repayment period is reduced to 15 years, the repayments increase to £1014 x 180 months and the total is reduced to  just less than £183,000.    </p>
+
+<p><a href="https://raw.githubusercontent.com/michaelfortune/LoanRepayment-Shiny-App/master/Shiny9_180.PNG">https://raw.githubusercontent.com/michaelfortune/LoanRepayment-Shiny-App/master/Shiny9_180.PNG</a></p>
+
+<h2>
+<a id="what-is-the-reason-for-the-difference" class="anchor" href="#what-is-the-reason-for-the-difference" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is the reason for the difference?</h2>
+
+<p>One main reason for the difference is that the caoital is being paid off at an accelerated rate with each payment. Where the interest rates are low, there is little financial advantage in repaying a loan over a shorter period, but this changes markedly as interest rises.  </p>
+
+<h2>
+<a id="lets-look-at-the-effect-of-a-change-in-interest-rate-by-changing-the-value-in-the-dropdown" class="anchor" href="#lets-look-at-the-effect-of-a-change-in-interest-rate-by-changing-the-value-in-the-dropdown" aria-hidden="true"><span class="octicon octicon-link"></span></a>Let's look at the effect of a change in interest rate, by changing the value in the dropdown:</h2>
+
+<div class="highlight highlight-r,"><pre>library(<span class="pl-smi">shiny</span>)
+
+shinyApp(
+  <span class="pl-v">ui</span> <span class="pl-k">=</span> fluidPage(
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(<span class="pl-s"><span class="pl-pds">"</span>r<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>Select Annual Interest Rate here from the dropdown:<span class="pl-pds">"</span></span>,
+                  <span class="pl-v">choices</span> <span class="pl-k">=</span> c(<span class="pl-c1">1.0</span>, <span class="pl-c1">2.0</span>, <span class="pl-c1">3.0</span>, <span class="pl-c1">4.0</span>, <span class="pl-c1">5.0</span>, <span class="pl-c1">6.0</span>, <span class="pl-c1">7.0</span>, <span class="pl-c1">8.0</span>, <span class="pl-c1">9.0</span>, <span class="pl-c1">10.0</span>))
+      ), <span class="pl-c">## end</span>
+      mainPanel(plotOutput(<span class="pl-s"><span class="pl-pds">"</span>distPlot<span class="pl-pds">"</span></span>)),
+  )
+),
+
+<span class="pl-v">server</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">input</span>, <span class="pl-smi">output</span>) {
+
+  <span class="pl-smi">output</span><span class="pl-k">$</span><span class="pl-smi">distPlot</span> <span class="pl-k">&lt;-</span> renderPlot({
+    options(<span class="pl-v">scipen</span><span class="pl-k">=</span><span class="pl-c1">10</span>)
+    <span class="pl-smi">int</span> <span class="pl-k">&lt;-</span> as.numeric(<span class="pl-smi">input</span><span class="pl-k">$</span><span class="pl-smi">r</span>)<span class="pl-k">/</span><span class="pl-c1">1200</span>
+    <span class="pl-smi">loan</span> <span class="pl-k">&lt;-</span> <span class="pl-c1">100000</span>
+    <span class="pl-smi">term</span> <span class="pl-k">&lt;-</span> <span class="pl-c1">240</span>
+    <span class="pl-smi">P</span> <span class="pl-k">&lt;-</span> (<span class="pl-smi">int</span> <span class="pl-k">*</span> <span class="pl-smi">loan</span>) <span class="pl-k">/</span>  (<span class="pl-c1">1</span> <span class="pl-k">-</span> ((<span class="pl-c1">1</span><span class="pl-k">+</span><span class="pl-smi">int</span>)<span class="pl-k">^-</span><span class="pl-smi">term</span>))
+    <span class="pl-smi">Payments</span> <span class="pl-k">&lt;-</span> seq(<span class="pl-smi">P</span>, <span class="pl-smi">term</span><span class="pl-k">*</span><span class="pl-smi">P</span>, <span class="pl-smi">P</span>)
+    plot(<span class="pl-smi">Payments</span>, <span class="pl-v">type</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>o<span class="pl-pds">"</span></span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>blue<span class="pl-pds">"</span></span>, <span class="pl-v">xlab</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Months<span class="pl-pds">"</span></span>, <span class="pl-v">ylab</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Total Payments<span class="pl-pds">"</span></span>)
+    title(<span class="pl-v">main</span> <span class="pl-k">=</span> paste(<span class="pl-s"><span class="pl-pds">"</span>Loan Repayments (Rounded):<span class="pl-pds">"</span></span>, <span class="pl-smi">term</span>, <span class="pl-s"><span class="pl-pds">"</span>payments x <span class="pl-pds">"</span></span>, round(<span class="pl-smi">P</span>,<span class="pl-c1">0</span>), <span class="pl-s"><span class="pl-pds">"</span> Total:<span class="pl-pds">"</span></span> , round(<span class="pl-smi">term</span><span class="pl-k">*</span><span class="pl-smi">P</span>,<span class="pl-c1">0</span>)), <span class="pl-v">col.main</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>blue<span class="pl-pds">"</span></span>, <span class="pl-v">font.main</span><span class="pl-k">=</span><span class="pl-c1">3</span>)
+  })
+})
+</pre></div>
+
+<h2>
+<a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h2>
+
+<p>In conclusion, it is clear that the use of the shiny app will provide a useful means for people seeking loans, or otherwise managing long-term loans by providing an insight into the effect of increasing, or reducing repayments on the length of a loan and the amount of the toal repayment as well as the interplay of the interest rates. I trust that this was useful.</p>
+
+<p>Please visit the shiny apps site and try it for youself.</p>
+
+<h2>
+<a id="thank-you-for-your-time" class="anchor" href="#thank-you-for-your-time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thank you for your time.</h2>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/michaelfortune/LoanRepayment-Shiny-App">Loanrepayment-shiny-app</a> is maintained by <a href="https://github.com/michaelfortune">michaelfortune</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
