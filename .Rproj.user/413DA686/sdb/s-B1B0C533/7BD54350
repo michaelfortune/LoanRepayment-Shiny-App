@@ -1,0 +1,17 @@
+{
+    "contents" : "# This is the user interface logic for my Shiny web application.\n##\n# the server app calculates calculate loan repayments\n# based on:\n# a) loan amount (present value)\n# b) annual interest rate\n# c) number of monthly payment periods\n# Function returns monthly payment\n# Useful for e.g. working out repayment mortgage payments\n# param pv a present value\n# param r a annual compound interest rate\n# param n a number of payments e.g.  20 years = 240 payments\n# input here in the ui.R and a graph showing total payments\n# over time is displayed.\n# author Michael Fortune\n\n\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  # Application title\n  titlePanel(\"Loan Repayment Calculator\"),\n  tags$p(\"This Shiny app allows you to calculate what your monthly repayments would be for a loan.\n           Simply select the Annual interest, input the number of months and select the loan amount.\n           The graph on the right will show how much you have paid over time and the graph title\n           contains the repayment amount and the total (rounded). The app's reactive nature allows\n           you to change any of the three values and immediately see the new value e.g. how much\n           more do I need to pay if I reduce the period by 60 months etc.\"),\n\n  sidebarLayout(\n\n    sidebarPanel(\n\n      selectInput(\"r\", \"Select Annual Interest Rate here from the dropdown:\",\n                  choices = c(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0)),\n\n      numericInput(\"n\", \"Enter Number of monthly repayments:\", 240),\n\n      ### Slider to select the amount of the loan\n      sliderInput(\"pv\",\n                  \"Enter the amount that you wish to loan\",\n                  min = 10000,\n                  max = 500000,\n                  value = 100000)\n\n      ), ## end\n\n      mainPanel(plotOutput(\"distPlot\")),\n\n  )\n\n))\n\n",
+    "created" : 1440260624718.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "836705507",
+    "id" : "7BD54350",
+    "lastKnownWriteTime" : 1440321173,
+    "path" : "~/R/LoanPayments/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

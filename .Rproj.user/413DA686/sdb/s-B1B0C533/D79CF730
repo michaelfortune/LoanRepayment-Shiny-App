@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the server logic for my Shiny web application.\n#\n#\n# It calculates calculate loan repayments\n# based on:\n# a) loan amount (present value)\n# b) annual interest rate\n# c) number of monthly payment periods\n# Function returns monthly payment\n# Useful for e.g. working out repayment mortgage payments\n# param pv a present value\n# param r a annual compound interest rate\n# param n a number of payments e.g.  20 years = 240 payments\n# input in the ui.R and a graph showing total payments over\n# time is displayed.\n# author Michael Fortune\n\n\n\nshinyServer(function(input, output) {\n\n  # Expression that generates a plot of the distribution. The expression\n  # is wrapped in a call to renderPlot to indicate that:\n  #\n  #  1) It is \"reactive\" and therefore should be automatically\n  #     re-executed when inputs change\n  #  2) Its output type is a plot\n  #\n  output$distPlot <- renderPlot({\n    options(scipen=10)\n    int <- as.numeric(input$r)/1200\n    loan <- input$pv\n    term <- input$n\n    P <- (int * loan) /  (1 - ((1+int)^-term))\n    Payments <- seq(P, term*P, P)\n    plot(Payments, type=\"o\", col=\"blue\", xlab = \"Months\", ylab = \"Total Payments\")\n    title(main = paste(\"Loan Repayments (Rounded):\", term, \"payments x \", round(P,0), \" Total:\" , round(term*P,0)), col.main=\"blue\", font.main=3)\n  },height = 500, width = 700)\n})\n",
+    "created" : 1440254053996.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3421180282",
+    "id" : "D79CF730",
+    "lastKnownWriteTime" : 1440321753,
+    "path" : "~/R/LoanPayments/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+{
+    "path" : "~/R/LoanPayments",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

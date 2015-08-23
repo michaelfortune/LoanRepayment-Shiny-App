@@ -1,0 +1,9 @@
+Package: LoanPayments
+Type: Package
+Title: Calculating loan repayments
+Version: 1.0
+Date: 2015-08-22
+Author: Michael Fortune
+Maintainer: Michael Fortune <mike_fortune@lineone.net>
+Description: Calculates loan repayments over time
+License: GPL-3
